@@ -1,0 +1,72 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+}
+
+.icon {
+    font-size: 2em;
+}
+
+.margin-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    clear: both;
+}
+
+.required {
+    color: red;
+    font-weight:bold;
+}
+
+.accordion {
+    margin-top:10px;
+}
+
+.form {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+
+.alert {
+    margin-bottom: 0!important;
+}
+
+footer {
+  margin-top: auto;
+  background: #005bbb;
+  color: white;  
+}
+
+.nhsd-a-logo {
+  display: block;
+  fill: #005bbb;
+}
+
+.nhs-color {
+  background: #005bbb;
+  color: #fff;
+}
+
+.card {
+  width: 18rem;
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+.nhsuk-image__img {
+  display: block;
+  width: 25%;
+}
