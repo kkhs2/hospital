@@ -30,10 +30,6 @@
             <input type="text" name="address2" id="address2" class="form-control" value="{{ $staff->address2 }}" disabled>
         </div>
         <div class="mb-3">
-            <label class="form-label">address2</label>
-            <input type="text" name="address2" id="address2" class="form-control" value="{{ $staff->address2 }}" disabled>
-        </div>
-        <div class="mb-3">
             <label class="form-label">Town/City</label>
             <input type="text" name="towncity" id="towncity" class="form-control" value="{{ $staff->towncity }}" disabled>
         </div>

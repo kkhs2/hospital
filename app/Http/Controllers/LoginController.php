@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Classes\Staff;
 
 class LoginController extends Controller
 {   
@@ -14,6 +15,7 @@ class LoginController extends Controller
     }
 
     protected function login(Request $request) {
+
         $request = $request->all();
         $email = $request['email'];
         $password = $request['password'];

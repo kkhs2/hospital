@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 class PatientController extends Controller
 {
     //
+    
+
     protected function searchPatientPage() {
         $hospitals = DB::select('SELECT * FROM hospitals');
         $wards = DB::select('SELECT * FROM wards');
@@ -53,11 +55,11 @@ class PatientController extends Controller
 
     protected function searchPatientsOnWard() {
         
-        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.middlename, p.lastname, h.id AS hospital_id, h.name, w.id AS ward_id, w.department FROM patientsonwards po INNER JOIN patients p ON po.patient_id = p.id INNER JOIN staffsonwards so ON po.ward_id = so.ward_id AND po.hospital_id = so.hospital_id INNER JOIN wards w ON so.ward_id = w.id INNER JOIN hospitals h ON so.hospital_id = h.id WHERE so.staff_id = :staff_id', array(
+        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.middlename, p.lastname, h.id AS hospital_id, h.name, w.id AS ward_id, w.name FROM patientshospitalswards po INNER JOIN patients p ON po.patient_id = p.id INNER JOIN staffshospitalswards so ON po.ward_id = so.ward_id AND po.hospital_id = so.hospital_id INNER JOIN wards w ON so.ward_id = w.id INNER JOIN hospitals h ON so.hospital_id = h.id WHERE so.staff_id = :staff_id', array(
             'staff_id' => session()->get('staff.id')
         ));
         if (!$patients) {
-            return back()->with('error', 'There are no patients\' from the hospital and ward');
+            return back()->with('error', 'You do not have any patients currently in your hospital and ward.');
         }
         else {
             return view('loggedin.patientsonyourward', [

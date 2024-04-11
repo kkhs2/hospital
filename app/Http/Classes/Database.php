@@ -7,15 +7,6 @@ class Database {
     
   }
 
-  public function selectCurrenciesFromToken($currency, $token) {
-    $query = 'SELECT * FROM ' . $this->table . ' WHERE country = :currency AND token = :token'; 
-    $params = [
-      'currency' => $currency,
-      'token' => $token
-    ];
-    $selectAnd = DB::select($query, $params);
-    return $selectAnd; 
-  }
 
   public function select($field, $value) {
     $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $field . ' = :value';

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class PatientSearchController extends Controller
 {
-    //
+    //   
     public function index() {
         $hospitals = DB::select('SELECT * FROM hospitals');
         $wards = DB::select('SELECT * FROM wards');
@@ -16,20 +16,11 @@ class PatientSearchController extends Controller
             'wards' => $wards
         ]);
     }
-
-    protected function searchPatientPage() {
-        $hospitals = DB::select('SELECT * FROM hospitals');
-        $wards = DB::select('SELECT * FROM wards');
-        return view('loggedin.patientssearch', [
-            'hospitals' => $hospitals,
-            'wards' => $wards
-        ]);
-    }
-
+     
     protected function search(Request $request) {
         $request = $request['patient'];
 
-        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.lastname, p.address1, p.address2, p.towncity, p.county, p.postcode, h.name, w.name FROM patients p LEFT JOIN patients_hospitals_wards phw ON phw.patient_id = p.id LEFT JOIN hospitals h ON phw.hospital_id = h.id LEFT JOIN wards w ON phw.ward_id = w.id WHERE firstname = :firstname and lastname = :lastname', array(
+        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.lastname, p.address1, p.address2, p.towncity, p.county, p.postcode, h.name, w.name FROM patients p LEFT JOIN patientshospitalswards phw ON phw.patient_id = p.id LEFT JOIN hospitals h ON phw.hospital_id = h.id LEFT JOIN wards w ON phw.ward_id = w.id WHERE firstname = :firstname and lastname = :lastname', array(
             'firstname' => $request['firstname'] ?? '',
             'lastname' => $request['lastname'] ?? ''
         ));

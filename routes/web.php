@@ -47,11 +47,10 @@ Route::get('information', [InformationController::class, 'index']);
 
 Route::get('information/{page}', [InformationController::class, 'displayContent']);
 
-Route::get('patientssearch', [PatientSearchController::class, 'index']);
 
 Route::post('patientssearch', [PatientSearchController::class, 'search']);
 
-Route::get('patientssearch', [PatientSearchController::class, 'search']);
+Route::get('patientssearch', [PatientSearchController::class, 'index']);
 
 Route::get('register', [RegisterController::class, 'create']);
 
@@ -60,6 +59,16 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('searchpatientsonyourward', [PatientController::class, 'searchPatientsOnWard']);
 
 Route::get('admin', [AdminController::class, 'index']);
+
+Route::get('addstaff', [AdminController::class, 'addStaff']);
+
+Route::get('addpatient', [AdminController::class, 'addPatient']);
+
+Route::get('editpatient', [AdminController::class, 'editPatient']);
+
+Route::get('editstaff', [AdminController::class, 'editStaff']);
+
+
 
 /*Route::get('/myprofile', 'MyProfileController@index');
 
