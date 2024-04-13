@@ -48,7 +48,9 @@ Route::get('information', [InformationController::class, 'index']);
 Route::get('information/{page}', [InformationController::class, 'displayContent']);
 
 
-Route::post('patientssearch', [PatientSearchController::class, 'search']);
+Route::post('patientssearchname', [PatientSearchController::class, 'searchName']);
+
+Route::post('patientssearchhospitalward', [PatientSearchController::class, 'searchHospitalWard']);
 
 Route::get('patientssearch', [PatientSearchController::class, 'index']);
 
@@ -68,6 +70,7 @@ Route::get('editpatient', [AdminController::class, 'editPatient']);
 
 Route::get('editstaff', [AdminController::class, 'editStaff']);
 
+Route::get('/patientdetails/{patientId}', [PatientController::class, 'patientDetails']);
 
 
 /*Route::get('/myprofile', 'MyProfileController@index');
@@ -84,11 +87,6 @@ Route::get('/logout', 'LogoutController@index');
 
 Route::post('/addpatienttreatment', 'PatientController@getAddTreatmentPage');
 
-Route::get('/editpatient/{patientId}', 'PatientController@editPatient');
-
-Route::get('/searchpatientsonyourward', 'PatientController@searchPatientsOnWard');
-
-Route::get('/patienthistory/{patientId}', 'PatientController@patientHistory');
 
 Route::post('/searchApiContent', 'InformationController@displaySearchApiContent');
 

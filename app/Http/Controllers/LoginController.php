@@ -19,13 +19,15 @@ class LoginController extends Controller
         $request = $request->all();
         $email = $request['email'];
         $password = $request['password'];
+        
         $login = DB::select('
-            SELECT *
-            FROM staffs s left join positions p
-            on p.id = s.position_id
+            SELECT s.id, s.title, s.firstname, s.lastname, s.address1, s.address2, s.towncity, s.county, s.postcode, s.email, s.password, p.job 
+            FROM staffs s INNER JOIN positions p
+            on s.position_id = p.id
             WHERE email = :email    
             ', array('email' => $email)
         );
+
 
 
         if (empty($login) || !password_verify($password, $login[0]->password)) {

@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="https://digital.nhs.uk/webfiles/1660648155587/icons/favicon-32x32.png" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/hospital.css') }}">
+    <link rel="stylesheet" type="text/css" href="/css/hospital.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 

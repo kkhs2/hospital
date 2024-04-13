@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Classes\Patient;
 
 class PatientController extends Controller
 {
     //
-    
 
     protected function searchPatientPage() {
         $hospitals = DB::select('SELECT * FROM hospitals');
@@ -116,7 +116,7 @@ class PatientController extends Controller
         }
     }
 
-    protected function editPatient($patientId) {
+    protected function patientDetails($patientId) {
         $patient = DB::select('SELECT * FROM patients WHERE id = :patientId', array(
             'patientId' => $patientId
         ));
@@ -124,9 +124,8 @@ class PatientController extends Controller
             return back()->with('error', 'Patient does not exist');
         }
         else {
-            return view('loggedin.editpatient', [
-                'patient' => $patient,
-                'titles' => $this->getTitles()
+            return view('loggedin.patientdetails', [
+                'patient' => $patient
             ]);
         }
     }
@@ -141,7 +140,6 @@ class PatientController extends Controller
             'lastname' => $request['lastname'],
             'address1' => $request['address1'],
             'address2' => $request['address2'],
-            'address3' => $request['address3'],
             'towncity' => $request['towncity'],
             'county' => $request['county'],
             'postcode' => $request['postcode']

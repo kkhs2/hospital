@@ -3,29 +3,17 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Address 1</th>
-                <th>Town/City</th>
+                <th>Patient Name</th>
                 <th>Hospital/Ward</th>
-                <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($patients as $key => $val)
             <tr>
-                <td>{{ $val->id }}</td>
-                <td>{{ $val->title }}</td>
-                <td>{{ $val->firstname }}</td>
-                <td>{{ $val->lastname }}</td>
-                <td>{{ $val->address1 }}</td>
-                <td>{{ $val->towncity }}</td>
-                <td>{{ $val->name }}<br>{{ $val->department }}</td>
-                <td><a href="{{ url('/editpatient') }}/{{ $val->id }}" name="editpatient" class="btn btn-primary">Edit Patient</a></td>
-                <td><a href="{{ url('/patienthistory') }}/{{ $val->id }}" name="patienthistory" class="btn btn-primary">See Patient History</a></td>
+                <td>{{ $val->title }} {{ $val->firstname }} {{ $val->lastname }}</td>
+                <td>{{ $val->name }}</td>
+                <td><a href="{{ url('/patientdetails') }}/{{ $val->id }}" name="patientdetails" class="btn btn-primary nhs-color">Patient Details</a></td>
+                <td><a href="{{ url('/patienthistory') }}/{{ $val->id }}" name="patienthistory" class="btn btn-primary nhs-color">See Patient History</a></td>
             </tr>
             @endforeach
         </tbody>

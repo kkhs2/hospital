@@ -6,8 +6,8 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col">
-            <form method="POST" class="form patient-medical-searchname-form" id="patient-medical-searchname-form" name="patient-medical-searchname-form" action="{{ url('patientssearch') }}">
+        <div class="col"> 
+            <form method="POST" class="form patient-medical-searchname-form" id="patient-medical-searchname-form" name="patient-medical-searchname-form" action="{{ url('patientsearchname') }}">
               @csrf
                 <div class="input-group mb-3">
                   <input type="text" name="patient[firstname]" class="form-control" placeholder="First Name" required> 
@@ -19,7 +19,7 @@
             </form>
         </div>
         <div class="col">
-            <form method="POST" class="form patient-medical-searchhospitalward-form" id="patient-medical-searchhospital-form" name="patient-medical-searchhospitalward-form" action="{{ url('/patientssearch') }}">
+            <form method="POST" class="form patient-medical-searchhospitalward-form" id="patient-medical-searchhospital-form" name="patient-medical-searchhospitalward-form" action="{{ url('/patientssearchhospitalward') }}">
             @csrf
             <div class="input-group mb-3">
                 <select class="form-select" name="patient[hospital_id]" placeholder="Select Hospital" required>
