@@ -3,10 +3,7 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Patient</th>
                 <th>Hospital/Ward</th>
                 <th></th>
                 <th></th>
@@ -16,22 +13,18 @@
         <tbody>
             @foreach ($patients as $key => $val)
             <tr>
-                <td>{{ $val->id }}</td>
-                <td>{{ $val->title }}</td>
-                <td>{{ $val->firstname }}</td>
-                <td>{{ $val->lastname }}</td>
-                <td>{{ $val->name }}<br>{{ $val->department }}
-                <td><a href="{{ url('/editpatient') }}/{{ $val->id }}" class="btn btn-primary">Edit Patient</a></td>
+                <td>{{ $val->title }} {{ $val->firstname }} {{ $val->lastname }}</td>
+                <td>{{ $val->hospitalname }}<br>{{ $val->wardname }}</td>
+                <td><a href="{{ url('/patientmedicalstats') }}/{{ $val->id }}" class="btn btn-primary">Medical Information</a></td>
                 <td>
                     <form class="form" method="POST" name="addtreattreatment-form" action="{{ url('/addpatienttreatment') }}">
                         @csrf
                         <input type="hidden" name="patientId" value="{{ $val->id }}">
                         <input type="hidden" name="hospitalId" value="{{ $val->hospital_id }}">
                         <input type="hidden" name="wardId" value="{{ $val->ward_id }}">
-                        <button type="submit" class="btn btn-primary" name="addpatienttreatment-btn">Add Patient Treatment</button>
+                        <button type="submit" class="btn btn-primary" name="addpatienttreatment-btn">Treatment</button>
                     </form>
                 </td>
-                <td><a href="{{ url('/patienthistory') }}/{{ $val->id }}" class="btn btn-primary">Patient Treatment History</a></td>
             </tr>
             @endforeach
         </tbody>

@@ -36,25 +36,8 @@
             <path fill="#231F20" d="M0,38.5h4.4c4.9,0,9.2,1.7,9.2,8s-4.3,8-9.2,8H0V38.5z M3.2,52H5c2.7,0,5.3-2,5.3-5.5C10.3,43,7.7,41,5,41H3.2V52z"></path>
           </svg>
       <!-- end svg -->
-
-      @if (session('staff'))
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="link-dark ml-4" href="{{ url('/home') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="link-dark ml-4" href="{{ url('myaccount') }}">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="link-dark ml-4" href="{{ url('logout') }}">Log out</a>
-          </li>
-        </ul>
-      </div>
-      @endif
-      <!--<img class="nhsuk-image__img" src="https://apimgmtstrbns9gsxxqoiy7d.blob.core.windows.net/content/MediaLibrary/Terms/nhs_attribution.png">-->        
   </header>
-</div>
+
     <div class="container py-2">
       <x-flashmessage></x-flashmessage>
     </div>

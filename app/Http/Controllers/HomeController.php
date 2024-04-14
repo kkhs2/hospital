@@ -11,6 +11,7 @@ class HomeController extends Controller
 {
     //
     protected function index() {
+
         if (session()->get('staff')) {
             return view('loggedin.home', [
                 'staff' => session()->get('staff')[0]

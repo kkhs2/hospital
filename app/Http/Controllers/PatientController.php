@@ -55,15 +55,16 @@ class PatientController extends Controller
 
     protected function searchPatientsOnWard() {
         
-        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.middlename, p.lastname, h.id AS hospital_id, h.name, w.id AS ward_id, w.name FROM patientshospitalswards po INNER JOIN patients p ON po.patient_id = p.id INNER JOIN staffshospitalswards so ON po.ward_id = so.ward_id AND po.hospital_id = so.hospital_id INNER JOIN wards w ON so.ward_id = w.id INNER JOIN hospitals h ON so.hospital_id = h.id WHERE so.staff_id = :staff_id', array(
-            'staff_id' => session()->get('staff.id')
+        $patients = DB::select('SELECT p.id, p.title, p.firstname, p.middlename, p.lastname, h.name AS hospitalname, w.name AS wardname, w.id AS ward_id, h.id AS hospital_id, w.id AS ward_id FROM patientshospitalswards po JOIN patients p ON po.patient_id = p.id JOIN staffshospitalswards so ON po.ward_id = so.ward_id AND po.hospital_id = so.hospital_id JOIN wards w ON so.ward_id = w.id JOIN hospitals h ON so.hospital_id = h.id WHERE so.staff_id = :staff_id', array(
+            'staff_id' => session()->get('staff')[0]->id
         ));
+
         if (!$patients) {
             return back()->with('error', 'You do not have any patients currently in your hospital and ward.');
         }
         else {
             return view('loggedin.patientsonyourward', [
-                'staffId' => session()->get('staff.id'),
+                'staffId' => session()->get('staff')[0]->id,
                 'patients' => $patients
             ]);
         }

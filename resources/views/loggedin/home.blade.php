@@ -1,10 +1,4 @@
 <x-layout>
-<div class="container-fluid mb-2 nhs-color">
-  <div class="container pt-4 pb-4">
-    <h1 class="display-5 fw-bold">{{ $staff->firstname }} {{ $staff->lastname }} dashboard</h1>
-    <p>Welcome to the home page. Please see below for all options available to you.</p>
-  </div>
-</div>
 <div class="container">
   <div class="card-group">
     <div class="card">
@@ -38,7 +32,7 @@
         <span>Handover notes</span>
       </div>
       <div class="card-body">
-        <a href="{{ url('/handover') }}/{{ $staff->id }}" class="btn"><i class="fas fa-h-square icon"></i></a>
+        <a href="{{ url('/handover') }}" class="btn"><i class="fas fa-h-square icon"></i></a>
       </div>
     </div>
     <div class="card">
