@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Hospital;
 use App\Models\Patient;
 use App\Models\Ward;
+use App\Models\Treatment;
 use Illuminate\Support\Facades\DB;
+use App\Classes\Database;
 
 class TreatmentController extends Controller
 {
@@ -18,12 +20,20 @@ class TreatmentController extends Controller
             'hospital' => $hospital,
             'patient' => $patient,
             'ward' => $ward,
+            'staff_id' => session()->get('staff')[0]->id,
             'treatments' => $treatments
         ]);
     }
 
     public function create(Request $request) {
-        $request = $request->all();
+        $treatment = $request->input('treatment');
+        $insertTreatment = DB::insert('INSERT INTO treatments (description, staff_id, patient_id, hospital_id, ward_id) VALUES (:description, :staff_id, :patient_id, :hospital_id, :ward_id)', [
+            'description' => $treatment['description'],
+            'staff_id' => $treatment['staffId'],
+            'patient_id' => $treatment['patientId'],
+            'hospital_id' => $treatment['hospitalId'],
+            'ward_id' => $treatment['wardId']
+        ]);
         
     }
 

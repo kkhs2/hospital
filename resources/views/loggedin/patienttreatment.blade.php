@@ -3,12 +3,13 @@
     <form method="POST" name="patienttreatment" id="patienttreatment" action="{{ url('patienttreatment') }}">
       @csrf
       <div class="form-floating mb-3">
-        <textarea class="form-control" name="description" id="description" required></textarea>
+        <textarea class="form-control" name="treatment[description]" id="description" required></textarea>
         <label for="patienttreatment">Add treatment</label>
       </div>
-      <input type="hidden" name="hospitalId" value="{{ $hospital->id }}">
-      <input type="hidden" name="patientId" value="{{ $patient->id }}">
-      <input type="hidden" name="wardId" value="{{ $ward->id }}">
+      <input type="hidden" name="treatment[hospitalId]" value="{{ $hospital->id }}">
+      <input type="hidden" name="treatment[patientId]" value="{{ $patient->id }}">
+      <input type="hidden" name="treatment[staffId]" value="{{ $staff_id }}">
+      <input type="hidden" name="treatment[wardId]" value="{{ $ward->id }}">
       <button type="submit" name="patienttreatment" class="btn btn-primary">Add</button>
     </form>
   </div>
