@@ -10,6 +10,8 @@ use App\Http\Controllers\PatientSearchController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\HandoverController;
+use App\Http\Controllers\TreatmentController;
 
 
 /*
@@ -70,7 +72,13 @@ Route::get('editpatient', [AdminController::class, 'editPatient']);
 
 Route::get('editstaff', [AdminController::class, 'editStaff']);
 
-Route::get('/patientdetails/{patientId}', [PatientController::class, 'patientDetails']);
+Route::get('patientdetails/{patientId}', [PatientController::class, 'patientDetails']);
+
+Route::get('handover', [HandoverController::class, 'index']);
+
+Route::get('patienttreatment/{hospital}/{patient}/{ward}', [TreatmentController::class, 'show']);
+
+Route::post('patienttreatment', [TreatmentController::class, 'create']);
 
 
 /*Route::get('/myprofile', 'MyProfileController@index');
@@ -84,8 +92,6 @@ Route::get('/information/{page}', 'InformationController@displayContent');
 Route::get('/patientssearch', 'PatientController@searchPatientPage');
 
 Route::get('/logout', 'LogoutController@index');
-
-Route::post('/addpatienttreatment', 'PatientController@getAddTreatmentPage');
 
 
 Route::post('/searchApiContent', 'InformationController@displaySearchApiContent');

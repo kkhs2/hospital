@@ -1,22 +1,6 @@
 use hospital;
 
 
-create table conditions (
-  id int not null auto_increment primary key,
-  name varchar(100),
-  created timestamp default current_timestamp,
-  updated datetime default current_timestamp on update current_timestamp
-);
-
-
-create table patientsmedicalinfo (
-  id int not null auto_increment primary key,
-  patient_id int,
-  created timestamp default current_timestamp,
-  updated datetime default current_timestamp on update current_timestamp
-);
-
-
 
 
 /*insert into wards (id, name, created_at, updated_at) values 
