@@ -110,10 +110,10 @@ class PatientController extends Controller
             'ward_id' => $request['wardId']
         ));
         if (!$treatment) {
-            return redirect('/searchpatientsonyourward')->with('error', 'Cannot add treatment at this time.');
+            return redirect('searchpatientsonyourward')->with('error', 'Cannot add treatment at this time.');
         }
         else {
-            return redirect('/searchpatientsonyourward')->with('success', 'The treatment has been added successfully.');
+            return redirect('searchpatientsonyourward')->with('success', 'The treatment has been added successfully.');
         }
     }
 
@@ -151,7 +151,7 @@ class PatientController extends Controller
         }
         else {
             //return back()->with('success', 'Patient details updated successfully.');
-            return redirect('/searchpatientsonyourward')->withInput();
+            return redirect('searchpatientsonyourward')->withInput();
         }
     }
 

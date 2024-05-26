@@ -20,6 +20,8 @@
   <body>
     <header class="mt-2 mb-2">
       <div class="container py-2">
+        <div class="row">
+          <div class="col">
       <!-- svg from nhs website --> 
         <svg class="nhsd-a-logo " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" width="80" height="60" aria-hidden="true" focusable="false">
             <rect x="0" width="80" height="32.1"></rect>
@@ -36,6 +38,30 @@
             <path fill="#231F20" d="M0,38.5h4.4c4.9,0,9.2,1.7,9.2,8s-4.3,8-9.2,8H0V38.5z M3.2,52H5c2.7,0,5.3-2,5.3-5.5C10.3,43,7.7,41,5,41H3.2V52z"></path>
           </svg>
       <!-- end svg -->
+        </div>
+        <div class="col">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Hospital System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        </div>
   </header>
 
     <div class="container py-2">
