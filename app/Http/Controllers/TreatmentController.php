@@ -34,7 +34,6 @@ class TreatmentController extends Controller
             'hospital_id' => $treatment['hospitalId'],
             'ward_id' => $treatment['wardId']
         ]);
-        
     }
 
     public function getPatientTreatments($patient) {

@@ -11,6 +11,6 @@ class LogoutController extends Controller
     //
     protected function index() {
         session()->flush();
-        return redirect('/login')->with('success', 'You have logged out of the app.');
+        return redirect('login');
     }
 }

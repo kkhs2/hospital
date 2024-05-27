@@ -1,5 +1,11 @@
 use hospital;
 
+create table hospitalswardsshifts (
+  id int not null auto_increment primary key,
+  ward_id int
+  created timestamp default current_timestamp,
+  updated datetime default current_timestamp on update current_timestamp
+);
 
 
 

@@ -40,27 +40,9 @@
       <!-- end svg -->
         </div>
         <div class="col">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Hospital System</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">My Settings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log Out</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+          @if (session('staff'))
+            <x-navbar></x-navbar>
+          @endif
         </div>
   </header>
 
@@ -72,7 +54,10 @@
     </main>
     <footer class="footer">
       <div class="container py-2">
-        <i><strong>Created by kkhs2, content courtesy of NHS digital API &copy; {{ Date('Y') }}</strong></i>
+      <a href="https://www.nhs.uk/THE_PATH_TO_THE_ORIGINAL_CONTENT_GOES_HERE" target="_blank">
+  <img src="https://digital.nhs.uk/binaries/content/gallery/website/developer/api-catalogue/nhs-website-content/nhs-attribution.png" alt="Content supplied by the NHS website" width="801" height="157" style="width: 250px; height: 49px;" />
+</a>
+        
       </div>
     </footer>
   <!-- JavaScript Bundle with Popper -->
