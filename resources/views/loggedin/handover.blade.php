@@ -4,7 +4,6 @@
         <thead>
           <th>Patient</th>
           <th>Handover</th>
-          <th>Treatment</th>
         </thead>
         <tbody>
             @foreach ($patients as $key => $val)
@@ -17,7 +16,6 @@
                     <input type="hidden" name="patientId" value="{{ $val->patient_id }}">
                     <input type="hidden" name="hospitalId" value="{{ $val->hospital_id }}">
                     <input type="hidden" name="wardId" value="{{ $val->ward_id }}">
-                    <button type="submit" class="btn btn-primary" name="addpatienttreatment-btn">Treatment</button>
                   </form>
                 </tr>
             @endforeach

@@ -12,7 +12,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\HandoverController;
 use App\Http\Controllers\TreatmentController;
-
+use App\Http\Controllers\RotaController;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,9 @@ Route::get('patienttreatment/{hospital}/{patient}/{ward}', [TreatmentController:
 
 Route::post('patienttreatment', [TreatmentController::class, 'create']);
 
+Route::get('staffrota', [RotaController::class, 'index']);
+
+Route::get('calendar', [CalendarController::class, 'index']);
 
 /*Route::get('/myprofile', 'MyProfileController@index');
 

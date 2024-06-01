@@ -22,17 +22,16 @@ class PatientFactory extends Factory
     {
         return [
             //
-          'title' => rtrim($this->faker->title(), '.'),
-          'firstname' => $this->faker->firstName(),
-          'middlename' => $this->faker->firstName(),
+          //'title' => rtrim($this->faker->title(), '.'),
+          'title' => 'Mr',
+          'firstname' => $this->faker->firstNameMale(),
+          'middlename' => $this->faker->firstNameMale(),
           'lastname' => $this->faker->lastName(),
           'address1' => $this->faker->buildingNumber(),
-          'address2' => $this->faker->streetName(),
+          'address2' => $this->faker->streetAddress(),
           'towncity' => $this->faker->city(),
           'postcode' => $this->faker->postcode(),
           'county' => $this->faker->county(),
-          
-          
         ];
     }
 }
